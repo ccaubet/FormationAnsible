@@ -2,7 +2,15 @@
 - hosts: all
   become: true
   tasks:
-  - name: update distribution
-    apt:
-      update_cache: yes
+  # - name: update distribution
+  #   apt:
+  #     update_cache: yes
   - name: install git
+    apt:
+      name:
+        - git
+        - nodejs
+        - npm
+      update_cache: yes
+
+#si on met le update_cache à la fin de install git alors on commente la partie update distribution
