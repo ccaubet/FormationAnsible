@@ -1,0 +1,21 @@
+---
+- hosts: all
+  become: true
+  tasks:
+  - name: install docker
+    apt:
+      name:
+        - docker
+      update_cache: yes
+  - name: file result copy
+    copy: 
+      src: result/
+      dest: /
+  - name: file vote copy
+    copy:
+      src: vote/
+      dest: / 
+  - name: file worker copy
+    copy:
+      src: worker/
+      dest: / 
