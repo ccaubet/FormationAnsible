@@ -29,3 +29,15 @@
         - vote
         - worker
         - result
+    - name: delete folder
+      # docker_image:
+      #   name: image-{{item}}
+      #   path: /{{item}}
+      #   # source: build
+      file:
+        path: /{{item}}
+        state: absent
+      loop:
+        - vote
+        - worker
+        - result
